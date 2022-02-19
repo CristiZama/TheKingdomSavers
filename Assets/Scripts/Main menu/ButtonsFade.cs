@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -18,6 +16,8 @@ public class ButtonsFade : MonoBehaviour
         logoGrow = FindObjectOfType<LogoGrow>();
         img = GetComponent<Image>();
         textRenderer = transform.GetChild(0).GetComponent<TMP_Text>();
+
+        // The next lines are asigning the alpha values for each of the components
         Color c = img.color;
         Color cT = textRenderer.color;
         c.a = 0;
