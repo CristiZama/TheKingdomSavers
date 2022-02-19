@@ -4,6 +4,7 @@ public class LogoGrow : MonoBehaviour
 {
     [SerializeField] private float growFactor;
     [SerializeField] private float maxSize;
+    public bool hasFinished { get; private set; }
     private SpriteRenderer spriteRenderer;
     private Color color;
 
@@ -25,6 +26,10 @@ public class LogoGrow : MonoBehaviour
             {
                 color.a -= growFactor;
                 spriteRenderer.color = color;
+            }
+            else
+            {
+                hasFinished = true;
             }
         }
     }
