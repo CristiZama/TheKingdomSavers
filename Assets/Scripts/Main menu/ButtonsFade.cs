@@ -18,8 +18,14 @@ public class ButtonsFade : MonoBehaviour
         logoGrow = FindObjectOfType<LogoGrow>();
         img = GetComponent<Image>();
         textRenderer = transform.GetChild(0).GetComponent<TMP_Text>();
-        color = img.color;
-        colorText = textRenderer.color;        
+        Color c = img.color;
+        Color cT = textRenderer.color;
+        c.a = 0;
+        cT.a = 0;
+        img.color = c;
+        textRenderer.color = cT;
+        color = c;
+        colorText = cT;
     }
 
     private void Update()
